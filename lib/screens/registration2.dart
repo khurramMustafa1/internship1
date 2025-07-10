@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:internshipproject1/screens/login.dart';
 import 'package:internshipproject1/screens/registration.dart';
 class registration2 extends StatefulWidget {
   const registration2({super.key});
@@ -176,7 +177,8 @@ class _registration2State extends State<registration2> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: (){
+                    onPressed: (
+                        ){
                       showDialog(context: context,
                         barrierDismissible: false,
                         builder: (context){
@@ -201,7 +203,9 @@ class _registration2State extends State<registration2> {
                                   height: 60,
                                   width: 255,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                                    },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Color(0xFF339D44), // Button color
                                       foregroundColor: Color(0xFFF4F4F4), // Text color

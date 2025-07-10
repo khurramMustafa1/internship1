@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:internshipproject1/screens/login.dart';
+import 'package:internshipproject1/screens/dashbord.dart';
+import 'package:internshipproject1/screens/forgot.dart';
+import 'package:internshipproject1/screens/navigationabr.dart';
+import 'package:internshipproject1/screens/registration.dart';
 import 'package:internshipproject1/screens/registration2.dart';
 
-class Registration extends StatelessWidget {
-  const Registration({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,23 +18,24 @@ class Registration extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Colors.white
+                color: Colors.white
             ),
           ),
           // 🔹 Background Image
           Image.asset(
-            'assets/images/regback.jpg', // Make sure this image exists in assets
+            'assets/images/loginback.jpg', // Make sure this image exists in assets
             fit: BoxFit.cover,
+            width: screenHeight,
           ),
 
           // 🔹 Overlapping White Container (Starting inside image)
           Positioned(
-            top: 180,
+            top: screenHeight*0.35,
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
-              height: screenHeight*0.55,
+              height: screenHeight*0.5,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
@@ -48,7 +52,7 @@ class Registration extends StatelessWidget {
                         height: 15,
                       ),
                       const Text(
-                        "Create Account",
+                        "Welcome Again",
                         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 7),
@@ -58,9 +62,9 @@ class Registration extends StatelessWidget {
                       ),
                       const SizedBox(height: 30),
                       TextField(
-                        controller: TextEditingController(text: "khurram abbasi"),
+                        controller: TextEditingController(text: "khurramabbasi@gmail.com"),
                         decoration: InputDecoration(
-                          labelText: "Name",
+                          labelText: "name",
                           labelStyle: const TextStyle(color: Colors.green),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.grey),
@@ -74,23 +78,7 @@ class Registration extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 20),
-                      // Email field
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          labelStyle: const TextStyle(color: Colors.green),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.grey),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.green, width: 2),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
                       // Password field
                       TextField(
                         obscureText: true,
@@ -106,30 +94,16 @@ class Registration extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
+                      ), SizedBox(height: 20,),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: TextButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Forgot()));
+                        },
+                            child: Text("Forgot Password",style:
+                            TextStyle(color: Colors.green,fontSize: 13.33,fontWeight: FontWeight.w500,fontFamily: "raleway"),)),
                       ),
-
-                      const SizedBox(height: 20),
-                      // Confirm Password field
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: "Confirm Password",
-                          labelStyle: const TextStyle(color: Colors.green),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.grey),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.green, width: 2),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(height: 58),
+                      const SizedBox(height: 24),
                       // Next button
                       SizedBox(
                         width: 315,
@@ -142,16 +116,16 @@ class Registration extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>registration2()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>bottomnavbar()));
                             // Handle next
                           },
-                          child: const Text("Next"),
+                          child: const Text("Login"),
                         ),
                       ),
 
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 23),
                       // Login row
-                      const Text("Already have an account? ",style: TextStyle(color: Colors.grey),),
+                      const Text("Dont have an account? ",style: TextStyle(color: Colors.grey),),
                       GestureDetector(
                         onTap: () {
                           // Navigate to login
@@ -159,10 +133,10 @@ class Registration extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 0.2),
                           child: TextButton(onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Registration()));
                           },
                             child: const Text(
-                              "Login",
+                              "Signup",
                               style: TextStyle(
                                 color: Colors.green,
                                 fontWeight: FontWeight.bold,
