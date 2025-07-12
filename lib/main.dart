@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:internshipproject1/screens/navigationabr.dart';
+import 'package:internshipproject1/screens/question.dart';
 import 'package:internshipproject1/screens/spalshscreen.dart';
 
 void main() {

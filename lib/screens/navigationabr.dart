@@ -18,7 +18,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
   int selectedindex=0;
   List<Widget> screenlist =[
     Dashbord(image: '', title: '', subtitle: '',),
-    question(),
+    QuestionPage(),
     trending(),
     message(),
     profile(),
