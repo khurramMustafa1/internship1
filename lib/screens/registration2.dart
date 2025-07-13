@@ -225,17 +225,34 @@ class _registration2State extends State<registration2> {
                     child: Text("Next",style: TextStyle(color: Colors.white),)),
               ),
               SizedBox(height: 19,),
-              Padding(
-                padding: const EdgeInsets.only(left:0.00001,),
-                child: Column(
-                  children: [
-                    TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Registration()));
-                    }, child: Text("Back",style: TextStyle(color: Colors.green,
-                        fontSize: 13.33,fontWeight: FontWeight.w400,),)),
-                  ],
-                ),
-              )
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // 🔥 IMPORTANT!
+                children: [
+                  const SizedBox(height: 10),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero, // 🔥 Remove extra horizontal padding
+                      minimumSize: Size(0, 0), // optional: shrink to text size
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap, // optional
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Registration()),
+                      );
+                    },
+                    child: const Text(
+                      "Back",
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 13.33,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
             ],
           ),
         ),

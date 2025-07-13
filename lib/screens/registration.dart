@@ -150,31 +150,38 @@ class Registration extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 15),
-                      // Login row
-                      const Text("Already have an account? ",style: TextStyle(color: Colors.grey),),
-                      GestureDetector(
-                        onTap: () {
-                          // Navigate to login
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 0.2),
-                          child: TextButton(onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+
+                      const Text(
+                        "Already have an account?",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(height: 5),
+
+                      Align(
+                        alignment: Alignment.centerLeft, // This is the key
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero, // Remove extra default padding
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap, // Optional
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Registration()),
+                            );
                           },
-                            child: const Text(
-                              "Login",
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 27.65,
-                                fontFamily: "Raleway",
-                              ),
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 27.65,
+                              fontFamily: "Raleway",
                             ),
                           ),
                         ),
                       ),
 
-                      const SizedBox(height: 30),
                     ],
                   ),
                 ),

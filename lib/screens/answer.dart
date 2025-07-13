@@ -105,7 +105,7 @@ class _answeredState extends State<answered> {
                   ),
                 ),
               ),
-              SizedBox(height: 390,),
+              SizedBox(height: 370,),
 
               Center(
                 child: SizedBox(
